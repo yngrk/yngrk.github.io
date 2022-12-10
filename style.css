@@ -1,0 +1,133 @@
+html {
+    background-color: #9C3848;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    height: 100vh;
+    background-color: #9C3848;
+}
+
+.header {
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Bungee Shade', cursive;
+    color: #F7C59F;
+    line-height: 2em;
+}
+
+.info {
+    font-size: 0.8em;
+    font-family: 'Bungee', cursive;
+    color: #F7C59F;
+}
+
+.score {
+    border-radius: 1em;
+    background-color: #F7C59F;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.sc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3em;
+    font-family: 'Bungee', cursive;
+    color: #9C3848;
+    line-height: 1em;
+    margin: 10px 0;
+}
+
+.choice-box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    font-size: 2em;
+    font-family: 'Bungee', cursive;
+    color: #F7C59F;
+}
+
+.choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    background-color: #752e3a;
+    font-size: 60px;
+    color: #f7c59f;
+}
+
+.player-choice {
+    color: #F7C59F;
+    font-size: 2em;
+    font-family: 'Bungee', cursive;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rps-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: 5px;
+}
+
+.rps {
+    background-color: #752e3a;
+    font-size: 70px;
+    height: 120px;
+    width: 120px;
+    border-radius: 0.2em;
+    border: 0;
+    box-shadow: -5px 5px #5e2831;
+    transition: 0.2s;
+}
+
+.rps:hover {
+    box-shadow: -3px 3px #5e2831;
+    transform: translate(-2px, 2px);
+}
+
+
+.rps.disabled {
+    box-shadow: 0 0 #5e2831;
+    transform: translate(-5px, 5px);
+    background-color: #752e3a;
+}
+
+.endText {
+    font-size: 3em;
+    font-family: 'Bungee', cursive;
+    color: #F7C59F;
+}
+
+.endInfo {
+    font-size: 1em;
+    font-family: 'Bungee', cursive;
+    color: #F7C59F;
+}
+
+footer {
+    margin-top: auto;
+    color: #F7C59F;
+    font-size: 12px;
+    font-family: 'Bungee', cursive;
+}
