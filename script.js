@@ -29,15 +29,6 @@ function checkRound(cpu, player) {
     }
 }
 
-function convertChoiceValueToEmoji(value) {
-    switch (value) {
-        case 0: return "✊";
-        case 1: return "🖐️";
-        case 2: return "✌️";
-        default: return "error";
-    }
-}
-
 function updateText(winner) {
     const textBoard = document.querySelector(".plchoice-text");
 
@@ -55,11 +46,24 @@ function updateText(winner) {
 }
 
 function updateChoiceTable(cpuChoice, playerChoice) {
-    const cpuTable = document.querySelector(".choice.cpu");
-    const playerTable = document.querySelector(".choice.player");
+    const cpuText = document.querySelector(".cpu-choice-text");
+    const playerText = document.querySelector(".player-choice-text");
+    cpuText.textContent = "";
+    playerText.textContent = "";
 
-    cpuTable.textContent = convertChoiceValueToEmoji(cpuChoice);
-    playerTable.textContent = convertChoiceValueToEmoji(playerChoice);
+    const playerEmoji = document.querySelector(".player-emoji");
+    const cpuEmoji = document.querySelector(".cpu-emoji");
+
+    playerEmoji.src = `${choiceToEmoji(playerChoice)}.png`;
+    cpuEmoji.src = `${choiceToEmoji(cpuChoice)}.png`;
+}
+
+function choiceToEmoji (choice) {
+    switch (Number(choice)) {
+        case 0: return "g1594";
+        case 1: return "g1452";
+        case 2: return "g1490";
+    }
 }
 
 function updateScore(winner) {

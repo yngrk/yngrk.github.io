@@ -60,6 +60,11 @@ body {
     color: #F7C59F;
 }
 
+.choice-box img {
+    height: 60px;
+    width: auto;
+}
+
 .choice {
     display: flex;
     justify-content: center;
@@ -102,6 +107,11 @@ body {
     border: 0;
     box-shadow: -5px 5px #5e2831;
     transition: 0.2s;
+}
+
+.rps img {
+    height: 80px;
+    width: auto;
 }
 
 .rps:hover {
