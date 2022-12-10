@@ -43,6 +43,7 @@ function updateText(winner) {
     } else {
         textBoard.textContent = "ERROR: Something went wrong!";
     }
+    
 }
 
 function updateChoiceTable(cpuChoice, playerChoice) {
