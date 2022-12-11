@@ -96,7 +96,6 @@ function play(playerVal) {
     }, 1000);
 
     setTimeout(function () {
-        updateText("reset");
         buildEndPage(checkWinCondition())
     }, 1100);
 }

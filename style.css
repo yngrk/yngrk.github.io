@@ -102,8 +102,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 70px;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     border-radius: 0.2em;
     border: 0;
     box-shadow: -5px 5px #5e2831;
@@ -111,7 +111,7 @@ body {
 }
 
 .rps img {
-    height: 80px;
+    height: 60px;
     width: auto;
 }
 
