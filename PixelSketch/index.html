@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap'); </style>
+    <!-- ----------- -->
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>Pixel Sketch</title>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <section class="canvas">
+        <nav class="canvas-nav">
+            <div class="options">
+                <button class="btn nav-plus">&#43;</button>
+                <button class="btn nav-minus">&#8722;</button>
+                <div class="color-container btn">
+                    <label for="fg-color">Color:</label>
+                    <input type="color" id="fg-color" value="#ffffff">
+                </div>
+                <div class="color-container btn">
+                    <label for="bg-color">BG:</label>
+                    <input type="color" id="bg-color" value="#bbbbbb">
+                </div>
+            </div>
+
+            <div class="user-colors">
+                <p>user colors:</p>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+                <button class="btn user" data-color="#ffffff"><div></div></button>
+            </div>
+
+            <button class="btn clear">&#215;</button>
+        </nav>
+        <div class="canvas-content"></div>
+        <div class="canvas-footer">Young Rok Kim, 2022</div>
+    </section>
+    <section class="user-color-instruction">
+        <div class="instr-info-container">
+            <div class="instr-info">Click usercolor</div>
+            <div class="instr-info">set current color</div>
+        </div>
+        <div class="instr-info-container">
+            <div class="instr-info">(Hold) ALT + usercolor</div>
+            <div class="instr-info">saves current color</div>
+        </div>
+        <div class="instr-info-container">
+            <div class="instr-info">(Hold) ALT + click</div>
+            <div class="instr-info">Color Picker</div>
+        </div>
+    </section>
+</body>
+</html>

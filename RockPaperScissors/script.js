@@ -43,7 +43,6 @@ function updateText(winner) {
     } else {
         textBoard.textContent = "ERROR: Something went wrong!";
     }
-
 }
 
 function updateChoiceTable(cpuChoice, playerChoice) {
@@ -55,8 +54,8 @@ function updateChoiceTable(cpuChoice, playerChoice) {
     const playerEmoji = document.querySelector(".player-emoji");
     const cpuEmoji = document.querySelector(".cpu-emoji");
 
-    playerEmoji.src = `img/${choiceToEmoji(playerChoice)}.png`;
-    cpuEmoji.src = `img/${choiceToEmoji(cpuChoice)}.png`;
+    playerEmoji.src = `${choiceToEmoji(playerChoice)}.png`;
+    cpuEmoji.src = `${choiceToEmoji(cpuChoice)}.png`;
 }
 
 function choiceToEmoji (choice) {
@@ -96,6 +95,7 @@ function play(playerVal) {
     }, 1000);
 
     setTimeout(function () {
+        updateText("reset");
         buildEndPage(checkWinCondition())
     }, 1100);
 }
