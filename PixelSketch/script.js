@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const canvas = document.querySelector(".canvas-content");
 const plusBtn = document.querySelector(".btn.nav-plus");
 const minusBtn = document.querySelector(".btn.nav-minus");
@@ -115,8 +116,27 @@ function addListenerToPixels() {
     }));
 }
 
+function cleanPage() {
+    while (body.firstChild) {
+        body.removeChild(body.firstChild);
+    }
+}
+
+function showErrorPage() {
+    const header = document.createElement("div");
+    header.classList.add("error-header");
+    header.textContent = "Your Viewport is too small!";
+    const errorText = document.createElement("div");
+    errorText.classList.add("error-text");
+    errorText.textContent = "This page doesn't work well on Mobile. The Viewport must be at least 854px wide.";
+    body.appendChild(header);
+    body.appendChild(errorText);
+}
+
 if (window.innerWidth < 854) {
     // Remove every Element and create a "Viewport too small Info Screen"
+    cleanPage();
+    showErrorPage();
 } else {
     createGrid(16);
     addListenerToPixels();
