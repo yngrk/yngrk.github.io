@@ -48,10 +48,9 @@ body {
 .sidebar {
     display: flex;
     flex-direction: column;
-    width: 300px;
     background-color: var(--sidebar-bg-color);
-    position: fixed;
-    height: 100vh;
+    height: 100%;
+    width: 300px;
     border-right: 1px solid #36383d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.644);
     z-index: 5;
@@ -97,13 +96,8 @@ body {
 }
 
 .sidebar .nav-container {
-    overflow: scroll;
-    overflow-x: hidden;
-    padding-bottom: 50px;
-}
-
-.sidebar .nav-container::-webkit-scrollbar {
-    display: none;
+    position: sticky;
+    top: 1px;
 }
 
 .sidebar .nav-category {
