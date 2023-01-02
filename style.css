@@ -39,7 +39,7 @@
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 300px 1fr;
     background-color: var(--white);
 }
 
@@ -50,13 +50,12 @@ body {
     flex-direction: column;
     width: 300px;
     background-color: var(--sidebar-bg-color);
-    position: relative;
-    top: 0;
+    position: fixed;
     height: 100vh;
-    overflow: hidden;
     border-right: 1px solid #36383d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.644);
     z-index: 5;
+    grid-column: 1;
 }
 
 .sidebar .page-title {
@@ -164,8 +163,7 @@ body {
 /* --- MAIN FRAME --- */
 
 main {
-    height: 100vh;
-    overflow-y: scroll;
+    grid-column: 2;
 }
 
 /* --- COVER PAGE --- */
@@ -349,13 +347,4 @@ section.manifesto .end-block .separator {
 
 /* --- MEDIA QUERIES --- */
 
-@media screen and (max-width:900px) {
-    .sidebar {
-        position: fixed;
-        transform: translateX(-300px);
-    }
-
-    main {
-        width: 100vw;
-    }
-}
+@media screen and (max-width:900px) {}
