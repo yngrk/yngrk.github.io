@@ -292,6 +292,7 @@ section.manifesto .header .box p {
     transform: perspective(30px) rotateY(-1deg) scaleY(1.5);
     position: relative;
     right: 30px;
+    z-index: 3;
 }
 
 section.manifesto .header .line {
