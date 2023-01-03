@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=swap"
+      rel="stylesheet"
+    />
 
-    <style> @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=swap'); </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=swap");
+    </style>
     <!-- ------------ -->
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
     <title>Rock Paper Scissors!</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1>Rock Paper Scissors!</h1>
+      <h1>Rock Paper Scissors!</h1>
     </header>
     <section class="info">First to 5 wins the game!</section>
     <section class="score">
-        <div class="sc-container">
-            <div class="sc-pl-text">You</div>
-            <div class="sc-pl-val">0</div>
-        </div>
-        <div class="sc-container">:</div>
-        <div class="sc-container">
-            <div class="sc-cpu-text">CPU</div>
-            <div class="sc-cpu-val">0</div>
-        </div>
+      <div class="sc-container">
+        <div class="sc-pl-text">You</div>
+        <div class="sc-pl-val">0</div>
+      </div>
+      <div class="sc-container">:</div>
+      <div class="sc-container">
+        <div class="sc-cpu-text">CPU</div>
+        <div class="sc-cpu-val">0</div>
+      </div>
     </section>
     <section class="choice-box">
-        <div class="choice player"><p class="player-choice-text">?</p><img src="" class="player-emoji"></div>
-        <div>vs.</div>
-        <div class="choice cpu"><p class="cpu-choice-text">?</p><img src="" class="cpu-emoji"></div>
+      <div class="choice player">
+        <p class="player-choice-text">?</p>
+        <img src="" class="player-emoji" />
+      </div>
+      <div>vs.</div>
+      <div class="choice cpu">
+        <p class="cpu-choice-text">?</p>
+        <img src="" class="cpu-emoji" />
+      </div>
     </section>
     <section class="player-choice">
-        <div class="plchoice-text">Choose!</div>
-        <div class="rps-container">
-            <button data-value="0" class="rps rock"><img src="g1594.png" alt="rock"></button>
-            <button data-value="1" class="rps paper"><img src="g1452.png" alt="rock"></button>
-            <button data-value="2" class="rps scissors"><img src="g1490.png" alt="rock"></button>
-        </div>
+      <div class="plchoice-text">Choose!</div>
+      <div class="rps-container">
+        <button data-value="0" class="rps rock">
+          <img src="g1594.png" alt="rock" />
+        </button>
+        <button data-value="1" class="rps paper">
+          <img src="g1452.png" alt="rock" />
+        </button>
+        <button data-value="2" class="rps scissors">
+          <img src="g1490.png" alt="rock" />
+        </button>
+      </div>
     </section>
     <footer>Young Rok Kim, 2022</footer>
-</body>
+  </body>
 </html>

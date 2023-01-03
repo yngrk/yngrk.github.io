@@ -10,135 +10,151 @@ const userColors = document.querySelectorAll(".btn.user");
 let mouseDown = false;
 let currentSize;
 
-onmousedown = () => { mouseDown = true; };
-onmouseup = () => { mouseDown = false; };
+onmousedown = () => {
+  mouseDown = true;
+};
+onmouseup = () => {
+  mouseDown = false;
+};
 
 function createGrid(size) {
-    currentSize = size;
-    const factor = 9/(16/size);
-    canvas.style["grid-template-columns"] = `repeat(${size}, 1fr)`;
+  currentSize = size;
+  const factor = 9 / (16 / size);
+  canvas.style["grid-template-columns"] = `repeat(${size}, 1fr)`;
 
-    for (let i = 0; i < size*factor; i++) {
-        const grid = document.createElement("div");
-        grid.classList.add("canvas-pixel");
-        grid.style["background-color"] = bgColorPicker.value;
-        grid.dataset.color = bgColorPicker.value;
-        canvas.appendChild(grid);
-    }
+  for (let i = 0; i < size * factor; i++) {
+    const grid = document.createElement("div");
+    grid.classList.add("canvas-pixel");
+    grid.style["background-color"] = bgColorPicker.value;
+    grid.dataset.color = bgColorPicker.value;
+    canvas.appendChild(grid);
+  }
 }
 
 function clear() {
-    while (canvas.firstChild) {
-        canvas.removeChild(canvas.firstChild);
-    }
+  while (canvas.firstChild) {
+    canvas.removeChild(canvas.firstChild);
+  }
 }
 
 function increaseSize() {
-    if (currentSize >= 128) {return;}
-    checkSizeFormat();
-    clear();
-    createGrid(currentSize+16);
-    canvas.firstChild.classList.add("preview");
-    addListenerToPixels();
+  if (currentSize >= 128) {
+    return;
+  }
+  checkSizeFormat();
+  clear();
+  createGrid(currentSize + 16);
+  canvas.firstChild.classList.add("preview");
+  addListenerToPixels();
 }
 
 function decreaseSize() {
-    if (currentSize <= 16) {return;}
-    checkSizeFormat();
-    clear();
-    createGrid(currentSize-16);
-    canvas.firstChild.classList.add("preview");
-    addListenerToPixels();
+  if (currentSize <= 16) {
+    return;
+  }
+  checkSizeFormat();
+  clear();
+  createGrid(currentSize - 16);
+  canvas.firstChild.classList.add("preview");
+  addListenerToPixels();
 }
 
 function checkSizeFormat() {
-    if (currentSize % 16 !== 0) {currentSize = 16};
+  if (currentSize % 16 !== 0) {
+    currentSize = 16;
+  }
 }
 
 function getColor() {
-    return colorPicker.value;
+  return colorPicker.value;
 }
 
 // EventListeners
 
 // clear button
 clearBtn.addEventListener("click", () => {
-    clear();
-    createGrid(currentSize);
-    addListenerToPixels();
-})
+  clear();
+  createGrid(currentSize);
+  addListenerToPixels();
+});
 
 // plus button
 plusBtn.addEventListener("click", increaseSize);
 plusBtn.addEventListener("mouseover", function () {
-    canvas.firstChild.classList.add("preview");
+  canvas.firstChild.classList.add("preview");
 });
 plusBtn.addEventListener("mouseout", function () {
-    canvas.firstChild.classList.remove("preview");
+  canvas.firstChild.classList.remove("preview");
 });
 
 // minus button
 minusBtn.addEventListener("click", decreaseSize);
 minusBtn.addEventListener("mouseover", function () {
-    canvas.firstChild.classList.add("preview");
+  canvas.firstChild.classList.add("preview");
 });
 minusBtn.addEventListener("mouseout", function () {
-    canvas.firstChild.classList.remove("preview");
+  canvas.firstChild.classList.remove("preview");
 });
 
 // user colors
-userColors.forEach(color => color.addEventListener("click", function (e) {
+userColors.forEach((color) =>
+  color.addEventListener("click", function (e) {
     if (e.altKey) {
-        const col = getColor();
-        color.firstChild.style["background-color"] = col;
-        color.dataset.color = col;
+      const col = getColor();
+      color.firstChild.style["background-color"] = col;
+      color.dataset.color = col;
     } else {
-        console.log(color.dataset.color);
-        colorPicker.value = color.dataset.color;
+      console.log(color.dataset.color);
+      colorPicker.value = color.dataset.color;
     }
-}));
+  })
+);
 
 // pixel paint
 function addListenerToPixels() {
-    canvas.childNodes.forEach(pixel => pixel.addEventListener("mouseenter", function(e) {
-        if (mouseDown) {
-            pixel.style["background-color"] = colorPicker.value;
-            pixel.dataset.color = colorPicker.value;
-        } 
-    }));
-    canvas.childNodes.forEach(pixel => pixel.addEventListener("mousedown", function(e) {
-        if (e.altKey) {
-            colorPicker.value = pixel.dataset.color;
-        } else {
-            pixel.style["background-color"] = colorPicker.value;
-            pixel.dataset.color = colorPicker.value;
-        }
-    }));
+  canvas.childNodes.forEach((pixel) =>
+    pixel.addEventListener("mouseenter", function (e) {
+      if (mouseDown) {
+        pixel.style["background-color"] = colorPicker.value;
+        pixel.dataset.color = colorPicker.value;
+      }
+    })
+  );
+  canvas.childNodes.forEach((pixel) =>
+    pixel.addEventListener("mousedown", function (e) {
+      if (e.altKey) {
+        colorPicker.value = pixel.dataset.color;
+      } else {
+        pixel.style["background-color"] = colorPicker.value;
+        pixel.dataset.color = colorPicker.value;
+      }
+    })
+  );
 }
 
 function cleanPage() {
-    while (body.firstChild) {
-        body.removeChild(body.firstChild);
-    }
+  while (body.firstChild) {
+    body.removeChild(body.firstChild);
+  }
 }
 
 function showErrorPage() {
-    const header = document.createElement("div");
-    header.classList.add("error-header");
-    header.textContent = "Your Viewport is too small!";
-    const errorText = document.createElement("div");
-    errorText.classList.add("error-text");
-    errorText.textContent = "This page doesn't work well on Mobile. The Viewport must be at least 854px wide.";
-    body.appendChild(header);
-    body.appendChild(errorText);
+  const header = document.createElement("div");
+  header.classList.add("error-header");
+  header.textContent = "Your Viewport is too small!";
+  const errorText = document.createElement("div");
+  errorText.classList.add("error-text");
+  errorText.textContent =
+    "This page doesn't work well on Mobile. The Viewport must be at least 854px wide.";
+  body.appendChild(header);
+  body.appendChild(errorText);
 }
 
 if (window.innerWidth < 854) {
-    // Remove every Element and create a "Viewport too small Info Screen"
-    cleanPage();
-    showErrorPage();
+  // Remove every Element and create a "Viewport too small Info Screen"
+  cleanPage();
+  showErrorPage();
 } else {
-    createGrid(16);
-    addListenerToPixels();
+  createGrid(16);
+  addListenerToPixels();
 }
-
