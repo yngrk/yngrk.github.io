@@ -49,12 +49,14 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--sidebar-bg-color);
-    height: 100%;
-    width: 300px;
     border-right: 1px solid #36383d;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.644);
     z-index: 5;
     grid-column: 1;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 .sidebar .page-title {
@@ -96,8 +98,13 @@ body {
 }
 
 .sidebar .nav-container {
-    position: sticky;
-    top: 1px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+}
+
+.sidebar .nav-container::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar .nav-category {
